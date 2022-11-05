@@ -1,3 +1,13 @@
 .block:not(:last-child) {
     margin-bottom: 1.5rem;
+    height: 200px;
   }
+
+#bgen{
+    height:auto;
+    width:200px;
+    border-radius: 12px;
+    margin: auto;
+
+}
+
