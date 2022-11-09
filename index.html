@@ -6,104 +6,109 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What To Watch</title>
-    <link rel="stylesheet" href="./assets/styles.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <!-- CSS LINK-->
+    <link rel="stylesheet" href="./assets/style.css" />
+    <!-- FRAMEWORK LINK (BULMA)-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
+<body>
 
-<body class="text-purple-600 border-4 border-solid border-indigo-400 m-8 p-8">
-
-    <div class="font-serif">
-
-        <nav>
-            <div>
-                <h1 class="flex justify-center text-6xl border-white border-4 border-solid px-2 py-2 m-2 rounded-full ">
-                    <a
-                        class="flex justify-center text-6xl border-indigo-300 border-4 border-solid px-6 py-6 m-6 rounded-full ">Movie
-                        Randomizer</a>
-                </h1>
-            </div>
-            <ul class="flex justify-center m-2">
-                <li>
-                    <a class="m-2" href="#">
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="m-2" href="#">
-                        <span>About</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="m-2" href="#">
-                        <span>Contact</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<!-- PAGE HERO -->
+<section class="hero is-info has-background">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+    <!-- TITLE OF WEBSITE -->
+    <p class="title is-size-1 has-text-weight-bold">
+      What To Watch 
+    </p>
+    <!-- THIS IS THE CLASS FOR THE RANDOM QUOTE API -->
+    <div class="subtitle mt-6 is-italic" id="quote">
+      
     </div>
-    <main>
+  </div>
+  </div>
+</section>
 
-
-
-        <div>
-            <h4></h4>
-
-            <div>
-                <!--Cards go here-->
-                <div>
-                    <img src="" alt="">
-                    <div class=" px-16 py-16 flex justify-center ">
-
-                        <form type="class" class="file:border file:border-solid">
-                            <label
-                                class="text-2l font-semibold border-4 border-solid px-2 py-2"><span>Genre</span><input
-                                    class="border-2 m-4" placeholder="Genre" /></label>
-
-                            <label
-                                class="text-2l font-semibold border-4 border-solid px-2 py-2"><span>Actors</span><input
-                                    class="border-2 m-4" placeholder="Actors" /></label>
-
-                            <label
-                                class="text-2l font-semibold border-4 border-solid px-2 py-2"><span>Director</span><input
-                                    class="border-2 m-4" placeholder="Directors" /></label>
-
-                            <label
-                                class="text-2l font-semibold border-4 border-solid px-2 py-2"><span>Run-Time</span><input
-                                    class="border-2 m-4" placeholder="2:30" /></label>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-            <h4></h4>
-            <div>
-                <!-- Cards go here-->
-            </div>
-
-
-
-            <p class="flex justify-center text-2xl  ">
-                <button class="border-4 border-solid px-2 py-2 m-2 rounded-full">Random Movie</button>
-            </p>
-            <div class="flex justify-center">
-                <div>Load More</div>
-            </div>
-        </div>
-
-
-    </main>
-
+<!-- BLOCK FOR SEARCH SECTION -->
+<div class="block mt-5">
+  
+<!-- ADDING COLUMNS FOR CATEGORIES  -->
+<div class="columns ml-6">
+<!-- SEARCH FOR DIRECTOR -->
+  <div class="column">
+  
+    <div class="field has-addons">
+      <div class="control">
+        <input class="input" type="text" placeholder="Director">
+      </div>
+      <div class="control ">
+      </div>
     </div>
 
+  </div>
+<!-- SEARCH FOR ACTOR -->
+  <div class="column">
+
+    <div class="field has-addons">
+      <div class="control">
+        <input class="input" type="text" placeholder="Actor">
+      </div>
+      <div class="control ">
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="column">
+<!-- SEARCH FOR GENRE-->
+    <div class="field has-addons">
+      <div class="control">
+        <input class="input" type="text" placeholder="Genre">
+      </div>
+      <div class="control ">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="column">
+<!-- SELECT RUNTIME -->
+<div class="select">
+  <select>
+    <option>Runtime</option>
+    <option>Less than one hour</option>
+    <option>One hour to two hours</option>
+    <option>Two hours to three hours</option>
+    <option>More than three hours</option>
+  </select>
+</div>
+
+  </div>
+</div>
+
+</div>
+
+<!-- BLOCK FOR GENERATOR -->
+<div class="block mt-5">
+  
+<button class="button is-medium is-fullwidth" id="bgen">Show Me A Movie!</button> 
+
+<!-- GENERATED PART OF THE PAGE // PLACEHOLDER FOR NOW-->
+<div class="box mt-6" id="movpag">
+  I'm in a box.
+  
+</div>
 
 
 
 
 
-
-
-
+<!-- JAVA LINK -->
+<script src="./assets/script.js"></script>
+    
 </body>
 
 </html>
