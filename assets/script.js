@@ -1,3 +1,14 @@
+//GLOBAL VARIABLES
+var quoteEl = document.createElement('p')
+var authorEl = document.createElement('p')
+var displayMovie = document.getElementById("movpag")
+var movieName = document.createElement('p');
+var directorName = document.createElement('p')
+var rating = document.createElement('p')
+var releaseYear = document.createElement('p')
+var actors = document.createElement('ul')
+var genre = document.createElement('p')
+
 //RANDOM QUOTE API
 function getAPI() {
   let requestURL = 'https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=movies&count=10'
@@ -14,8 +25,6 @@ function getAPI() {
     })
     .then(function (data) {
       console.log(data)
-      var quoteEl = document.createElement('p')
-      var authorEl = document.createElement('p')
       for (var i = 0; i < data.length; i++) {
         var movieQuote = document.getElementById("quote");
         quoteEl.innerText = data[i].quote;
@@ -57,13 +66,23 @@ let movieGen = function() {
   })
   .then(function (data) {
     console.log(data)
-      var displayMovie = document.getElementById("movpag")
-      var movieName = document.createElement('p');
-      movieName.innerText = data.title
-      displayMovie.append(movieName)
+      movieName.innerText = data.title;
+      directorName.innerText = "Directed by: "+data.director_names;
+      rating.innerText = "IMDB Rating: "+data.rating;
+      genre.innerText = "Genre: "+data.genres;
+      releaseYear.innerText = "Released in: "+data.release_year;
+      displayMovie.append(movieName, directorName, releaseYear, rating, genre)
+      // for(i=0; i<5; i++){
+      //   var actorList = document.createElement('li');
+      //   actorList.innerText = data.actors[i]
+      //   actors.append(actorList)
+      // }
+      
     })
     .catch(err => console.error(err));
   }
+
+//EVENT LISTENER TO RUN MOVIE GENERATOR FUNCTION
 var randomButton = document.getElementById("bgen")
 randomButton.addEventListener("click", movieGen)
 
