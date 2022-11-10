@@ -1,0 +1,19 @@
+.block:not(:last-child) {
+    margin-bottom: 1.5rem;
+    height: 200px;
+  }
+
+#bgen{
+    height:auto;
+    width:200px;
+    border-radius: 12px;
+    margin: auto;
+
+}
+
+#movpag{
+  height: 1000px;
+  width: auto;
+  border-style: solid;
+  
+}
