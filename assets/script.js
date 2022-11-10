@@ -36,7 +36,7 @@ function pad(number, length) {
   }
   return str;
 }
-function randomMovieTest() {
+let movieGen = function() {
   var movie = pad(Math.floor((Math.random() * 2155529) + 1), 7)
   let requestAPITest = 'https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt'+movie;
   const option = {
@@ -45,22 +45,31 @@ function randomMovieTest() {
     'X-RapidAPI-Key': '96daaa2a72msh6617cdf732329f0p101675jsnf073a3307b06',
     'X-RapidAPI-Host': 'movie-details1.p.rapidapi.com'
   }
-};
+  };
   fetch(requestAPITest, option)
   .then(function (responses) {
     if (responses.ok){
       return responses.json();
     }
     else {
-      randomMovieTest()
+      movieGen()
     }
   })
   .then(function (data) {
     console.log(data)
-  })
-  .catch(err => console.error(err));
-}
-console.log(randomMovieTest())
+      var displayMovie = document.getElementById("movpag")
+      var movieName = document.createElement('p');
+      movieName.innerText = data.title
+      displayMovie.append(movieName)
+    })
+    .catch(err => console.error(err));
+  }
+var randomButton = document.getElementById("bgen")
+randomButton.addEventListener("click", movieGen)
+
+
+
+
 
 
 
