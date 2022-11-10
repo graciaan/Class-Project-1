@@ -1,113 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What To Watch</title>
-  
-    <!-- CSS LINK-->
-    <link rel="stylesheet" href="./assets/style.css" />
-    <!-- FRAMEWORK LINK (BULMA)-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What To Watch</title>
+
+  <!-- CSS LINK-->
+  <link rel="stylesheet" href="./assets/style.css" />
+  <!-- FRAMEWORK LINK (BULMA)-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
-
-<!-- PAGE HERO -->
-<section class="hero is-info has-background">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-    <!-- TITLE OF WEBSITE -->
-    <p class="title is-size-1 has-text-weight-bold">
-      What To Watch 
-    </p>
-    <!-- THIS IS THE CLASS FOR THE RANDOM QUOTE API -->
-    <div class="subtitle mt-6 is-italic" id="quote">
-      
+  <nav class="navbar is-dark">
+    <!--Nav-Bar-->
+    <div class="navbar-brand">
+      <a class="navbar-item image is-rounded" >
+        <img class="has-border is-rounded"  src="assets/images/cinema-clapper.png" alt="site-logo" style="max-height: 50px" class="py-2 px-2">
+      </a>
     </div>
-  </div>
-  </div>
-</section>
+    <div class="navbar-menu" id="nav-links">
+      <div class="navbar-end">
+        <a class="navbar-item has-text-weight-bold is-italic has-text-light  "> . My Profile</a>
+        <a class="navbar-item has-text-weight-bold has-text-light is-italic">. Recent Movies</a> 
+        <a class="navbar-item has-text-weight-bold has-text-light is-italic">. Favorites</a> 
 
-<!-- BLOCK FOR SEARCH SECTION -->
-<div class="block mt-5">
-  
-<!-- ADDING COLUMNS FOR CATEGORIES  -->
-<div class="columns ml-6">
-<!-- SEARCH FOR DIRECTOR -->
-  <div class="column">
-  
-    <div class="field has-addons">
-      <div class="control">
-        <input class="input" type="text" placeholder="Director">
-      </div>
-      <div class="control ">
       </div>
     </div>
+  </nav>
+  <!-- PAGE HERO -->
+  <section class="hero is-primary has-background">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <!-- TITLE OF WEBSITE -->
+        <p class="has-text-primary-light title is-size-1 has-text-weight-bold has-text-weight-bold is-italic">
+          What To Watch!
+        </p>
+        <!-- THIS IS THE CLASS FOR THE RANDOM QUOTE API -->
+        <div class="subtitle mt-6 is-italic" id="quote">
 
-  </div>
-<!-- SEARCH FOR ACTOR -->
-  <div class="column">
-
-    <div class="field has-addons">
-      <div class="control">
-        <input class="input" type="text" placeholder="Actor">
+        </div>
       </div>
-      <div class="control ">
+    </div>
+  </section>
+
+  <!-- BLOCK FOR SEARCH SECTION -->
+  <div class="block mt-5">
+
+    <!-- ADDING COLUMNS FOR CATEGORIES  -->
+    <div class="columns ml-6">
+      <!-- SEARCH FOR DIRECTOR -->
+      <div class="column">
+
+        <div class="field has-addons">
+          <div class="control">
+            <input class="input" type="text" placeholder="Director">
+          </div>
+          <div class="control ">
+          </div>
+        </div>
+
+      </div>
+      <!-- SEARCH FOR ACTOR -->
+      <div class="column">
+
+        <div class="field has-addons">
+          <div class="control">
+            <input class="input" type="text" placeholder="Actor">
+          </div>
+          <div class="control ">
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="column">
+        <!-- SEARCH FOR GENRE-->
+        <div class="field has-addons">
+          <div class="control">
+            <input class="input" type="text" placeholder="Genre">
+          </div>
+          <div class="control ">
+          </div>
+        </div>
+
+      </div>
+
+      <div class="column">
+        <!-- SELECT RUNTIME -->
+        <div class="select">
+          <select>
+            <option>Runtime</option>
+            <option>Less than one hour</option>
+            <option>One hour to two hours</option>
+            <option>Two hours to three hours</option>
+            <option>More than three hours</option>
+          </select>
+        </div>
+
       </div>
     </div>
 
   </div>
 
+  <!-- BLOCK FOR GENERATOR -->
+  <div class="block mt-5">
 
-  <div class="column">
-<!-- SEARCH FOR GENRE-->
-    <div class="field has-addons">
-      <div class="control">
-        <input class="input" type="text" placeholder="Genre">
-      </div>
-      <div class="control ">
-      </div>
+    <button class="button is-medium is-fullwidth" id="bgen">Show Me A Movie!</button>
+
+    <!-- GENERATED PART OF THE PAGE // PLACEHOLDER FOR NOW-->
+    <div class="box mt-6" id="movpag">
+      I'm in a box.
+
     </div>
 
-  </div>
-
-  <div class="column">
-<!-- SELECT RUNTIME -->
-<div class="select">
-  <select>
-    <option>Runtime</option>
-    <option>Less than one hour</option>
-    <option>One hour to two hours</option>
-    <option>Two hours to three hours</option>
-    <option>More than three hours</option>
-  </select>
-</div>
-
-  </div>
-</div>
-
-</div>
-
-<!-- BLOCK FOR GENERATOR -->
-<div class="block mt-5">
-  
-<button class="button is-medium is-fullwidth" id="bgen">Show Me A Movie!</button> 
-
-<!-- GENERATED PART OF THE PAGE // PLACEHOLDER FOR NOW-->
-<div class="box mt-6" id="movpag">
-  I'm in a box.
-  
-</div>
 
 
 
 
+    <!-- JAVA LINK -->
+    <script src="./assets/script.js"></script>
 
-<!-- JAVA LINK -->
-<script src="./assets/script.js"></script>
-    
 </body>
 
 </html>
