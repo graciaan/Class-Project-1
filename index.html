@@ -32,14 +32,17 @@
   </nav>
   <!-- PAGE HERO -->
   <section class="hero is-primary has-background">
-    <div class="hero-body">
-      <div class="container has-text-centered">
+    <div style="width:100%;" class="hero-body container is-flex is-flex-direction-row is-justify-content-space-evenly is-align-items-center">
+     <div class="has-text-left has-shadow-dark image is-rounded">
+      <img class="is-rounded image is-128x128" src="assets/images/reel.icon.png" class="">
+     </div>
+     <div style="max-width: 50%;" class="has-text-centered">
         <!-- TITLE OF WEBSITE -->
         <p class="has-text-primary-light title is-size-1 has-text-weight-bold has-text-weight-bold is-italic">
           What To Watch!
         </p>
         <!-- THIS IS THE CLASS FOR THE RANDOM QUOTE API -->
-        <div class="subtitle mt-6 is-italic" id="quote">
+        <div class="subtitle  is-italic" id="quote">
 
         </div>
       </div>
@@ -56,6 +59,7 @@
 
         <div class="field has-addons">
           <div class="control">
+            <label>Director</label>
             <input class="input" type="text" placeholder="Director">
           </div>
           <div class="control ">
@@ -68,6 +72,7 @@
 
         <div class="field has-addons">
           <div class="control">
+            <label>Actor</label>
             <input class="input" type="text" placeholder="Actor">
           </div>
           <div class="control ">
@@ -81,6 +86,7 @@
         <!-- SEARCH FOR GENRE-->
         <div class="field has-addons">
           <div class="control">
+            <label class="">Genre</label>
             <input class="input" type="text" placeholder="Genre">
           </div>
           <div class="control ">
@@ -92,6 +98,7 @@
       <div class="column">
         <!-- SELECT RUNTIME -->
         <div class="select">
+          <div></div>
           <select>
             <option>Runtime</option>
             <option>Less than one hour</option>
