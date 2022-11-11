@@ -1,13 +1,16 @@
 //GLOBAL VARIABLES
-var quoteEl = document.createElement('p')
-var authorEl = document.createElement('p')
-var displayMovie = document.getElementById("movpag")
+var quoteEl = document.createElement('p');
+var authorEl = document.createElement('p');
+var displayMovie = document.getElementById("movpag");
 var movieName = document.createElement('p');
-var directorName = document.createElement('p')
-var rating = document.createElement('p')
-var releaseYear = document.createElement('p')
-var actors = document.createElement('ul')
-var genre = document.createElement('p')
+var directorName = document.createElement('p');
+var rating = document.createElement('p');
+var releaseYear = document.createElement('p');
+var actors = document.createElement('ul');
+var genre = document.createElement('p');
+const movieImage = new Image(200, 400);
+
+
 
 //RANDOM QUOTE API
 function getAPI() {
@@ -71,7 +74,9 @@ let movieGen = function() {
       rating.innerText = "IMDB Rating: "+data.rating;
       genre.innerText = "Genre: "+data.genres;
       releaseYear.innerText = "Released in: "+data.release_year;
-      displayMovie.append(movieName, directorName, releaseYear, rating, genre)
+      movieImage.src = data.image || "./assets/images/imageplaceholder.png"
+      console.log(data.image)
+      displayMovie.append(movieName, directorName, releaseYear, rating, genre, movieImage)
       // for(i=0; i<5; i++){
       //   var actorList = document.createElement('li');
       //   actorList.innerText = data.actors[i]
