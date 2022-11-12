@@ -9,7 +9,8 @@ var releaseYear = document.createElement('p');
 var actors = document.createElement('ul');
 var genre = document.createElement('p');
 const movieImage = new Image(200, 400);
-
+var seenButton = document.createElement('button');
+var movieResult = null
 
 
 //RANDOM QUOTE API
@@ -68,9 +69,9 @@ let movieGen = function(event) {
       return responses.json();
     }
     else {
-      console.log("There was an error")
+      movieGen()
 console.log(responses)
- }
+}
   })
   .then(function (data) {
     console.log(data)
@@ -79,19 +80,23 @@ console.log(responses)
       rating.innerText = "IMDB Rating: "+data.rating;
       genre.innerText = "Genre: "+data.genres;
       releaseYear.innerText = "Released in: "+data.release_year;
-      movieImage.src = data.image || "./assets/images/imageplaceholder.png"
-      console.log(data.image)
-      displayMovie.append(movieName, directorName, releaseYear, rating, genre, movieImage)
-      // for(i=0; i<5; i++){
-      //   var actorList = document.createElement('li');
-      //   actorList.innerText = data.actors[i]
-      //   actors.append(actorList)
-      // }
-      
-    })
+      movieImage.src = data.image || "./assets/images/imageplaceholder.png" //CHOOSES BETWEEN IMAGE IN API OR PLACEHOLDER IMAGE
+      seenButton.innerText = "Already Seen"
+      displayMovie.append(movieName, directorName, releaseYear, rating, genre, movieImage, seenButton)
+      seenButton.addEventListener("click", saveMovie)
+      movieResult = data.title;
+      })
     .catch(err => console.error(err));
   }
 
+  function saveMovie(e){
+    e.preventDefault()
+    console.log("saveMovie")
+    var existingViewedMovies = JSON.parse(localStorage.getItem("viewedMovies")) || [];
+    existingViewedMovies.push(movieResult)
+    localStorage.setItem("viewedMovies", JSON.stringify(existingViewedMovies))
+  }
+  
 //EVENT LISTENER TO RUN MOVIE GENERATOR FUNCTION
 var randomButton = document.getElementById("bgen")
 randomButton.addEventListener("click", movieGen)
