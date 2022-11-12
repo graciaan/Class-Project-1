@@ -1,13 +1,17 @@
 //GLOBAL VARIABLES
-var quoteEl = document.createElement('p')
-var authorEl = document.createElement('p')
-var displayMovie = document.getElementById("movpag")
+var quoteEl = document.createElement('p');
+var authorEl = document.createElement('p');
+var displayMovie = document.getElementById("movpag");
 var movieName = document.createElement('p');
-var directorName = document.createElement('p')
-var rating = document.createElement('p')
-var releaseYear = document.createElement('p')
-var actors = document.createElement('ul')
-var genre = document.createElement('p')
+var directorName = document.createElement('p');
+var rating = document.createElement('p');
+var releaseYear = document.createElement('p');
+var actors = document.createElement('ul');
+var genre = document.createElement('p');
+const movieImage = new Image(200, 400);
+var seenButton = document.createElement('button');
+var movieResult = null
+
 
 //RANDOM QUOTE API
 function getAPI() {
@@ -35,7 +39,7 @@ function getAPI() {
     .catch(err => console.error(err));
 }
 window.onload = getAPI;
-
+// getAPI()
 
 //RANDOM MOVIE GENERATOR
 function pad(number, length) {
@@ -45,8 +49,12 @@ function pad(number, length) {
   }
   return str;
 }
-let movieGen = function() {
+let movieGen = function(event) {
+  if(event){
+    event.preventDefault()
+  }
   var movie = pad(Math.floor((Math.random() * 2155529) + 1), 7)
+  console.log(movie)
   let requestAPITest = 'https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt'+movie;
   const option = {
   method: 'GET',
@@ -62,26 +70,33 @@ let movieGen = function() {
     }
     else {
       movieGen()
-    }
+console.log(responses)
+}
   })
   .then(function (data) {
     console.log(data)
-      movieName.innerText = data.title;
+      movieName.innerText = data.title || "No Title Provided"
       directorName.innerText = "Directed by: "+data.director_names;
       rating.innerText = "IMDB Rating: "+data.rating;
       genre.innerText = "Genre: "+data.genres;
       releaseYear.innerText = "Released in: "+data.release_year;
-      displayMovie.append(movieName, directorName, releaseYear, rating, genre)
-      // for(i=0; i<5; i++){
-      //   var actorList = document.createElement('li');
-      //   actorList.innerText = data.actors[i]
-      //   actors.append(actorList)
-      // }
-      
-    })
+      movieImage.src = data.image || "./assets/images/imageplaceholder.png" //CHOOSES BETWEEN IMAGE IN API OR PLACEHOLDER IMAGE
+      seenButton.innerText = "Already Seen"
+      displayMovie.append(movieName, directorName, releaseYear, rating, genre, movieImage, seenButton)
+      seenButton.addEventListener("click", saveMovie)
+      movieResult = data.title;
+      })
     .catch(err => console.error(err));
   }
 
+  function saveMovie(e){
+    e.preventDefault()
+    console.log("saveMovie")
+    var existingViewedMovies = JSON.parse(localStorage.getItem("viewedMovies")) || [];
+    existingViewedMovies.push(movieResult)
+    localStorage.setItem("viewedMovies", JSON.stringify(existingViewedMovies))
+  }
+  
 //EVENT LISTENER TO RUN MOVIE GENERATOR FUNCTION
 var randomButton = document.getElementById("bgen")
 randomButton.addEventListener("click", movieGen)
