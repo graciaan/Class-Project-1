@@ -1,0 +1,23 @@
+{
+  "name": "class-project-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "build-css": "tailwindcss build src/styles.css np -o assets/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graciaan/Class-Project-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/graciaan/Class-Project-1/issues"
+  },
+  "homepage": "https://github.com/graciaan/Class-Project-1#readme",
+  "dependencies": {
+    "tailwindcss": "^3.2.1"
+  }
+}
