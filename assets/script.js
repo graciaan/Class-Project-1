@@ -38,7 +38,7 @@ function getAPI() {
     .catch(err => console.error(err));
 }
 window.onload = getAPI;
-
+// getAPI()
 
 //RANDOM MOVIE GENERATOR
 function pad(number, length) {
@@ -48,8 +48,12 @@ function pad(number, length) {
   }
   return str;
 }
-let movieGen = function() {
+let movieGen = function(event) {
+  if(event){
+    event.preventDefault()
+  }
   var movie = pad(Math.floor((Math.random() * 2155529) + 1), 7)
+  console.log(movie)
   let requestAPITest = 'https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt'+movie;
   const option = {
   method: 'GET',
@@ -64,12 +68,13 @@ let movieGen = function() {
       return responses.json();
     }
     else {
-      movieGen()
-    }
+      console.log("There was an error")
+console.log(responses)
+ }
   })
   .then(function (data) {
     console.log(data)
-      movieName.innerText = data.title;
+      movieName.innerText = data.title || "No Title Provided"
       directorName.innerText = "Directed by: "+data.director_names;
       rating.innerText = "IMDB Rating: "+data.rating;
       genre.innerText = "Genre: "+data.genres;
