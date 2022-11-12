@@ -69,9 +69,9 @@ let movieGen = function(event) {
       return responses.json();
     }
     else {
-      console.log("There was an error")
+      movieGen()
 console.log(responses)
- }
+}
   })
   .then(function (data) {
     console.log(data)
