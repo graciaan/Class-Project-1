@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./assets/style.css" />
   <!-- FRAMEWORK LINK (BULMA)-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
@@ -24,9 +25,9 @@
     </div>
     <div class="navbar-menu" id="nav-links">
       <div class="navbar-end">
-        <a class="navbar-item has-text-weight-bold is-italic has-text-light  "> . My Profile</a>
-        <a class="navbar-item has-text-weight-bold has-text-light is-italic">. Recent Movies</a>
-        <a class="navbar-item has-text-weight-bold has-text-light is-italic">. Favorites</a>
+        <a class="navbar-item has-text-weight-bold is-italic has-text-light" href="./index.html">New Quote</a>
+        <a class="navbar-item has-text-weight-bold has-text-light is-italic" href="./history.html">Movie List</a>
+        <!-- <a class="navbar-item has-text-weight-bold has-text-light is-italic">Favorites</a> -->
 
       </div>
     </div>
@@ -54,9 +55,12 @@
   <!-- BLOCK FOR SEARCH SECTION -->
   <div class="block mt-5">
 
+    <p class="is-size-3 has-text-centered is-family-sans-serif mt-6 pt-6"> Welcome to Movie Time-Machine! The application that will randomize a movie for you from all different cinematic eras. 
+      Just press the button that says "Show me a movie!" and we will recomend a movie for you to watch. If you find the movie interesting you can add it
+       to your likes and it will be stored in the "Movie List" tab in the top of the page.</p>
     <!-- ADDING COLUMNS FOR CATEGORIES  -->
-    <div class="columns ml-6">
-      <!-- SEARCH FOR DIRECTOR -->
+    <!-- <div class="columns ml-6">
+      SEARCH FOR DIRECTOR
       <div class="column">
 
         <div class="field has-addons">
@@ -69,7 +73,7 @@
         </div>
 
       </div>
-      <!-- SEARCH FOR ACTOR -->
+      SEARCH FOR ACTOR
       <div class="column">
 
         <div class="field has-addons">
@@ -84,7 +88,7 @@
 
 
       <div class="column">
-        <!-- SEARCH FOR GENRE-->
+        SEARCH FOR GENRE
         <div class="field has-addons">
           <div class="control">
             <input class="input" type="text" placeholder="Genre">
@@ -96,7 +100,7 @@
       </div>
 
       <div class="column">
-        <!-- SELECT RUNTIME -->
+        SELECT RUNTIME
         <div class="select">
           <div></div>
           <select>
@@ -109,20 +113,21 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
 
   </div>
 
   <!-- BLOCK FOR GENERATOR -->
-  <div class="block mt-5">
+  <div class="block mt-2">
 
-    <button class="button is-medium is-fullwidth" id="bgen">Show Me A Movie!</button>
+    <button class="button is-large is-fullwidth" id="bgen">Show Me A Movie 📽️</button>
+    
     </div>
   <!-- GENERATED PART OF THE PAGE // PLACEHOLDER FOR NOW-->
-    <div class="box mt-6" id="movpag">
+    <div class="box" id="movpag">
    
-
-      <div class="tile is-ancestor">
+ 
+      <!-- <div class="tile is-ancestor">
         <div class="tile is-parent">
           <article class="tile is-child box">
             <p class="title" id="nameOf">Name of Movie</p>
@@ -149,16 +154,33 @@
             <p class="subtitle" id="movRat">Rating of movie</p>
           </div>
         </div>
-      </div>
-
-      <div class="tile is-parent">
-        <div class="tile is-child box">
-          <p class="title">Desccription</p>
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title">Desccription</p>
+            <p class="subtitle" id="movDes">Description of movie</p>
+          </div>
         </div>
       </div>
-
+     -->
+ 
 
     </div>
+
+<!-- LIKE BUTTON -->
+    
+<div class="box">
+
+  <label class="like">
+    <input type="checkbox">
+    <div class="hearth"></div>
+  </label>
+  
+</div>
+
+
+
+
+
 
 
 
