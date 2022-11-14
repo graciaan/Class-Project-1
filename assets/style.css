@@ -78,8 +78,8 @@ input:checked + .hearth {
 @media (hover: hover) {
   .like:hover {
     background-color: #E1255E15;
+  }
     .hearth {
       background-position-x: calc(var(--size) * (var(--frames) * -1 + 1));
     }
-  }
 }

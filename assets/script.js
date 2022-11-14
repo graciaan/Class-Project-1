@@ -1,15 +1,25 @@
 //GLOBAL VARIABLES
 var quoteEl = document.createElement('p');
 var authorEl = document.createElement('p');
-var displayMovie = document.getElementById("movpag");
+var displayMovie = document.getElementById("nameOf");
+var displayDirect = document.getElementById('movDir');
+var displayRelease = document.getElementById('movRel');
+var displayGenre = document.getElementById('moveGen');
+var displayRating = document.getElementById('movRat');
+var displayDescription = document.getElementById('movDes');
+var displayPoster = document.getElementById('imgPoster');
 var movieName = document.createElement('p');
 var directorName = document.createElement('p');
 var rating = document.createElement('p');
 var releaseYear = document.createElement('p');
 var actors = document.createElement('ul');
 var genre = document.createElement('p');
+var movieDescription = document.createElement('p');
 const movieImage = new Image(200, 400);
-var seenButton = document.createElement('button');
+var saveButton = document.getElementById('saveBttn');
+var label = document.createElement('label');
+var input = document.createElement('input');
+var div = document.createElement('div');
 var movieResult = null
 
 
@@ -76,14 +86,25 @@ console.log(responses)
   .then(function (data) {
     console.log(data)
       movieName.innerText = data.title || "No Title Provided"
-      directorName.innerText = "Directed by: "+data.director_names;
-      rating.innerText = "IMDB Rating: "+data.rating;
-      genre.innerText = "Genre: "+data.genres;
-      releaseYear.innerText = "Released in: "+data.release_year;
+      directorName.innerText = data.director_names || "No Director Provided";
+      rating.innerText = data.rating || "No Rating Provided";
+      genre.innerText = data.genres || "No Genre Provided";
+      releaseYear.innerText = data.release_year || "No Release Year Provided";
+      movieDescription.innerText = data.description || "No Description Provided";
       movieImage.src = data.image || "./assets/images/imageplaceholder.png" //CHOOSES BETWEEN IMAGE IN API OR PLACEHOLDER IMAGE
-      seenButton.innerText = "Already Seen"
-      displayMovie.append(movieName, directorName, releaseYear, rating, genre, movieImage, seenButton)
-      seenButton.addEventListener("click", saveMovie)
+      displayMovie.append(movieName);
+      displayDirect.append(directorName);
+      displayRelease.append(releaseYear);
+      displayGenre.append(genre);
+      displayRating.append(rating);
+      displayDescription.append(movieDescription);
+      displayPoster.append(movieImage);
+      label.classList.add("like");
+      input.type = "checkbox";
+      div.classList.add("hearth");
+      label.append(input, div);
+      saveButton.append(label);
+      saveButton.addEventListener("click", saveMovie);
       movieResult = data.title;
       })
     .catch(err => console.error(err));
@@ -100,10 +121,3 @@ console.log(responses)
 //EVENT LISTENER TO RUN MOVIE GENERATOR FUNCTION
 var randomButton = document.getElementById("bgen")
 randomButton.addEventListener("click", movieGen)
-
-
-
-
-
-
-
