@@ -1,9 +1,10 @@
 //GLOBAL VARIABLES
 var quoteEl = document.createElement('p');
 var authorEl = document.createElement('p');
-var displayTitle = document.getElementById('nameOf')
-var likedMovies = localStorage.getItem("viewedMovies")
+var displayTitle = document.getElementById('nameOf');
+var likedMovies = localStorage.getItem('viewedMovies');
 likedMovies = JSON.parse(likedMovies);
+var clearBttn = document.getElementById('clearBttn');
 
 //IF STATEMENT WITH FOR LOOP THAT DISPLAYS CONTENT FROM LOCAL STORAGE
 if (likedMovies !== null) {
@@ -13,6 +14,12 @@ if (likedMovies !== null) {
     displayTitle.append(list)
   }
 }
+
+//FUNCTION THAT CLEARS LOCALSTORAGE DATA
+clearBttn.addEventListener('click', function(){
+  localStorage.clear();
+  location.reload();
+})
 
 //RANDOM QUOTE API
 function getAPI() {
