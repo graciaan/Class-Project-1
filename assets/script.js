@@ -16,7 +16,10 @@ var actors = document.createElement('ul');
 var genre = document.createElement('p');
 var movieDescription = document.createElement('p');
 const movieImage = new Image(200, 400);
-var seenButton = document.createElement('button');
+var saveButton = document.getElementById('saveBttn');
+var label = document.createElement('label');
+var input = document.createElement('input');
+var div = document.createElement('div');
 var movieResult = null
 
 
@@ -89,7 +92,6 @@ console.log(responses)
       releaseYear.innerText = data.release_year || "No Release Year Provided";
       movieDescription.innerText = data.description || "No Description Provided";
       movieImage.src = data.image || "./assets/images/imageplaceholder.png" //CHOOSES BETWEEN IMAGE IN API OR PLACEHOLDER IMAGE
-      seenButton.innerText = "Already Seen"
       displayMovie.append(movieName);
       displayDirect.append(directorName);
       displayRelease.append(releaseYear);
@@ -97,7 +99,12 @@ console.log(responses)
       displayRating.append(rating);
       displayDescription.append(movieDescription);
       displayPoster.append(movieImage);
-      seenButton.addEventListener("click", saveMovie)
+      label.classList.add("like");
+      input.type = "checkbox";
+      div.classList.add("hearth");
+      label.append(input, div);
+      saveButton.append(label);
+      saveButton.addEventListener("click", saveMovie);
       movieResult = data.title;
       })
     .catch(err => console.error(err));
