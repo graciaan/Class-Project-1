@@ -12,10 +12,10 @@
 
 ## Authors
 
-Sebastian Barrera - [GitHub](https://github.com/Barrerse)
-Andrew Gracia - [GitHub](https://github.com/graciaan)
-Jhanathan Spells - [GitHub](https://github.com/Bohrzz)
-Josue Umanzor - [GitHub](https://github.com/JOSUEHU)
+Sebastian Barrera - [GitHub](https://github.com/Barrerse)  <br/>
+Andrew Gracia - [GitHub](https://github.com/graciaan)  <br/>
+Jhanathan Spells - [GitHub](https://github.com/Bohrzz)  <br/>
+Josue Umanzor - [GitHub](https://github.com/JOSUEHU)  <br/>
 
 ## Description 
 
