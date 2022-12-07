@@ -29,7 +29,7 @@ function getAPI() {
   const options = {
     method: 'POST',
     headers: {
-      'X-RapidAPI-Key': '96daaa2a72msh6617cdf732329f0p101675jsnf073a3307b06',
+      'X-RapidAPI-Key': 'REMOVED',
       'X-RapidAPI-Host': 'andruxnet-random-famous-quotes.p.rapidapi.com'
     }
   };
@@ -69,7 +69,7 @@ let movieGen = function(event) {
   const option = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '96daaa2a72msh6617cdf732329f0p101675jsnf073a3307b06',
+    'X-RapidAPI-Key': 'REMOVED',
     'X-RapidAPI-Host': 'movie-details1.p.rapidapi.com'
   }
   };
