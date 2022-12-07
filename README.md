@@ -36,9 +36,9 @@ Welcome to Movie Time-Machine! The application that will randomize a movie for y
 
 ## Credits
 
-[Movie Quotes API](https://rapidapi.com/juanroldan1989/api/moviequotes)
-[Movie Details API](https://rapidapi.com/goodmoviesaps/api/movie-details1/)
-[Univerisy of Miami Coding Bootcamp](https://bootcamp.miami.edu/)
+[Movie Quotes API](https://rapidapi.com/juanroldan1989/api/moviequotes) <br/>
+[Movie Details API](https://rapidapi.com/goodmoviesaps/api/movie-details1/) <br/>
+[Univerisy of Miami Coding Bootcamp](https://bootcamp.miami.edu/) <br/>
 
 ## Website-Features
 
@@ -55,7 +55,7 @@ this website provides you with,
 
 ## Links
 
-Check out the application [here!] https://graciaan.github.io/Class-Project-1/
+Check out the application [here!](https://graciaan.github.io/Class-Project-1/)
 
 ![image](https://user-images.githubusercontent.com/108836644/201786868-8a4a721a-00a9-4f8d-b72d-9a7dc3bf313c.png)
 
